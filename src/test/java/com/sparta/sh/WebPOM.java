@@ -1,9 +1,7 @@
 package com.sparta.sh;
 
 import com.sparta.sh.pages.HomePage;
-import com.sparta.sh.pages.field.Age;
-import com.sparta.sh.pages.field.FirstName;
-import com.sparta.sh.pages.field.LastName;
+import com.sparta.sh.pages.field.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -18,6 +16,12 @@ public class WebPOM {
     FirstName firstName = new FirstName(webDriver);
     LastName lastName = new LastName(webDriver);
     Age age = new Age(webDriver);
+    Degree degree = new Degree(webDriver);
+    Address address = new Address(webDriver);
+    AddressTwo addresstwo = new AddressTwo(webDriver);
+    City city = new City(webDriver);
+    PostCode postCode = new PostCode(webDriver);
+    EmailAddress emailAddress = new EmailAddress(webDriver);
 
     @Test
     public void openPage() {
@@ -56,5 +60,72 @@ public class WebPOM {
     public void setAgeBox() {
         Assert.assertEquals(22, age.goToAgeBox());
     }
+
+    @Test
+    public void getDegreeTitle() {
+        Degree degree = homePage.goToDegree();
+        Assert.assertEquals("Degree *", degree.goToDegreeTitle());
+    }
+
+    @Test
+    public void setDegreeBox() {
+        Assert.assertEquals("Engineering", degree.goToDegreeBox());
+    }
+
+    @Test
+    public void getAddressTitle() {
+        Address address = homePage.goToAddress();
+        Assert.assertEquals("Address *", address.goToAddressTitle());
+    }
+
+    @Test
+    public void setAddressBox() {
+        Assert.assertEquals("66 Barrowfield Close", address.goToAddressBox());
+    }
+
+    @Test
+    public void getAddressTwoTitle() {
+        AddressTwo addressTwo = homePage.goToAddressTwo();
+        Assert.assertEquals("Address 2", addressTwo.goToAddressTwoTitle());
+    }
+
+    @Test
+    public void setAddressTwoBox() {
+        Assert.assertEquals("Enfield", addresstwo.goToAddressTwoBox());
+    }
+
+    @Test
+    public void getCityTitle() {
+        City city = homePage.goToCity();
+        Assert.assertEquals("City *", city.goToCityTitle());
+    }
+
+    @Test
+    public void setCityBox() {
+        Assert.assertEquals("London", city.goToCityBox());
+    }
+
+    @Test
+    public void getPostCodeTitle() {
+        PostCode postCode = homePage.goToPostCode();
+        Assert.assertEquals("Postcode *", postCode.goToPostCodeTitle();
+    }
+
+    @Test
+    public void setPostCodeBox() {
+        Assert.assertEquals("N9 0HA", postCode.goToPostCodeBox());
+    }
+
+    @Test
+    public void getEmailAddressTitle() {
+        EmailAddress emailAddress = homePage.goToEmailAddress();
+        Assert.assertEquals("Email address *", emailAddress.goToEmailAddressTitle();
+    }
+
+    @Test
+    public void setEmailAddressBox() {
+        Assert.assertEquals("Halim197201@yahoo.com", emailAddress.goToEmailAddressBox());
+    }
+
 
 }

@@ -1,9 +1,7 @@
 package com.sparta.sh.pages;
 
 
-import com.sparta.sh.pages.field.Age;
-import com.sparta.sh.pages.field.FirstName;
-import com.sparta.sh.pages.field.LastName;
+import com.sparta.sh.pages.field.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -35,7 +33,36 @@ public class HomePage {
         webDriver.findElement(By.xpath("/html/body/div/form/div[3]/div/label")).getText();
         return new Age(webDriver);
     }
+
+    public Degree goToDegree() {
+        webDriver.findElement(By.xpath("/html/body/div/form/div[7]/div/label")).getText();
+        return new Degree(webDriver);
+    }
+
+    public Address goToAddress() {
+        webDriver.findElement(By.xpath("/html/body/div/form/div[9]/div/label")).getText();
+        return new Address(webDriver);
+    }
+
+    public AddressTwo goToAddressTwo() {
+        webDriver.findElement(By.xpath("/html/body/div/form/div[10]/div/label")).getText();
+        return new AddressTwo(webDriver);
+    }
+
+    public City goToCity() {
+        webDriver.findElement(By.xpath("/html/body/div/form/div[11]/div/label")).getText();
+        return new City(webDriver);
+    }
+
+    public PostCode goToPostCode() {
+        webDriver.findElement(By.xpath("/html/body/div/form/div[13]/div/label")).getText();
+        return new PostCode(webDriver);
+    }
+
+    public EmailAddress goToEmailAddress() {
+        webDriver.findElement(By.xpath("/html/body/div/form/div[14]/div/label")).getText();
+        return new EmailAddress(webDriver);
+    }
 }
 
-//First name, Last Name, Age, DOB, Gender, Degree, University, Address, Address 2, City, County,
-//Postcode, Email, Skills, Phone, LinkedIn, CV, Streams, Agree, Rate
+//Skills, Phone, LinkedIn, CV, Streams, Agree, Rate
